@@ -8,7 +8,7 @@ export class ServicioCliente {
         this.gestorCliente = gestorCliente;
     }
 
-    public crear(nombreCompleto: string, telefono: string, idTipoMembresia: number, notas?: string): number {
+    public crear(nombreCompleto: string, telefono: string, notas?: string): number {
         // Validaciones
         if (!nombreCompleto || nombreCompleto.trim() === '') {
             throw new Error('El nombre completo es obligatorio.');
@@ -22,10 +22,6 @@ export class ServicioCliente {
             throw new Error('Número de teléfono inválido. Debe tener 10 o 12 dígitos.');
         }
 
-        if (!idTipoMembresia || idTipoMembresia <= 0) {
-            throw new Error('Debe seleccionar un tipo de membresía válido.');
-        }
-
         const telefonoNumero = this.stringToNumber(telefono);
 
         // Verificar duplicados
@@ -37,7 +33,6 @@ export class ServicioCliente {
         const nuevoCliente = new cliente(
             nombreCompleto.trim(),
             telefonoNumero,
-            idTipoMembresia,
             notas?.trim()
         );
 

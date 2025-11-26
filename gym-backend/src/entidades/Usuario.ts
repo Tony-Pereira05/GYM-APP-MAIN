@@ -1,21 +1,19 @@
-export class usuario {
+export class usuario{
     private readonly usuarioId: number;
     private nombreUsuario: string;
     private contrasenaHash: string;
-    private email: string;
 
-    constructor(nombreUsuario: string, contrasenaHash: string, email: string, usuarioId?: number) {
-        this.usuarioId = usuarioId || 0;
+    constructor(nombreUsuario: string, contrasenaHash: string){
+        this.usuarioId = 0;
         this.nombreUsuario = nombreUsuario;
         this.contrasenaHash = contrasenaHash;
-        this.email = email;
     }
 
     public getUsuarioId(): number {
         return this.usuarioId;
     }
 
-    public getNombreUsuario(): string {
+    public getNombreUsuario(): string {    
         return this.nombreUsuario;
     }
 
@@ -29,13 +27,5 @@ export class usuario {
 
     public setContrasenaHash(contrasenaHash: string): void {
         this.contrasenaHash = contrasenaHash;
-    }
-
-    public getEmail(): string {
-        return this.email;
-    }
-
-    public setEmail(email: string): void {
-        this.email = email;
     }
 }

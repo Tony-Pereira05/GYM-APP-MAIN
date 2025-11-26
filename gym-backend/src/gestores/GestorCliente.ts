@@ -11,14 +11,13 @@ export class GestorCliente {
   // Agregar un nuevo cliente a la base de datos
   public agregar(cliente: cliente): number {
     const stmt = this.db.prepare(`
-      INSERT INTO Clientes (Nombre_Completo, Telefono, ID_Tipo_Membresia, Notas, Fecha_Registro)
-      VALUES (?, ?, ?, ?, ?)
+      INSERT INTO Clientes (Nombre_Completo, Telefono, Notas, Fecha_Registro)
+      VALUES (?, ?, ?, ?)
     `);
 
     const result = stmt.run(
       cliente.getNombreCompleto(),
       cliente.getTelefono(),
-      cliente.getIdTipoMembresia(),
       cliente.getNotas(),
       cliente.getFechaRegistro().toISOString()
     );
@@ -41,7 +40,6 @@ export class GestorCliente {
     return new cliente(
       row.Nombre_Completo,
       row.Telefono,
-      row.ID_Tipo_Membresia,
       row.Notas,
       row.ID
     );
@@ -60,7 +58,6 @@ export class GestorCliente {
     return rows.map(row => new cliente(
       row.Nombre_Completo,
       row.Telefono,
-      row.ID_Tipo_Membresia,
       row.Notas,
       row.ID
     ));
@@ -81,7 +78,6 @@ export class GestorCliente {
     return new cliente(
       row.Nombre_Completo,
       row.Telefono,
-      row.ID_Tipo_Membresia,
       row.Notas,
       row.ID
     );
@@ -98,7 +94,6 @@ export class GestorCliente {
     return rows.map(row => new cliente(
       row.Nombre_Completo,
       row.Telefono,
-      row.ID_Tipo_Membresia,
       row.Notas,
       row.ID
     ));

@@ -1,27 +1,27 @@
 
-export class membresia {
+export class membresia{
     private readonly membresiaId: number;
-    private readonly tipoMembresiaId: number;
-    private readonly clienteId: number;
+    private readonly tipoMembresiaID: number;
+    private readonly usuarioID: number;
     private readonly fechaInicio: Date;
 
-    constructor(tipoMembresiaId: number, clienteId: number, membresiaId?: number) {
-        this.membresiaId = membresiaId || 0;
-        this.tipoMembresiaId = tipoMembresiaId;
-        this.clienteId = clienteId;
+    constructor(tipoMembresiaID: number, usuarioID: number){
+        this.membresiaId = 0;
+        this.tipoMembresiaID = tipoMembresiaID;
+        this.usuarioID = usuarioID;
         this.fechaInicio = new Date();
     }
 
     public getMembresiaId(): number {
         return this.membresiaId;
     }
-
-    public getTipoMembresiaId(): number {
-        return this.tipoMembresiaId;
+    
+    public getTipoMembresiaID(): number {
+        return this.tipoMembresiaID;
     }
 
-    public getClienteId(): number {
-        return this.clienteId;
+    public getUsuarioID(): number {
+        return this.usuarioID;
     }
 
     public getFechaInicio(): Date {

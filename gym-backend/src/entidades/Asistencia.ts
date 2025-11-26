@@ -1,21 +1,21 @@
 
-export class asistencia {
+export class asistencia{
     private readonly asistenciaId: number;
-    private readonly membresiaId: number;
+    private readonly clienteID: number;
     private readonly fechaCheckIn: Date;
 
-    constructor(membresiaId: number, asistenciaId?: number) {
-        this.asistenciaId = asistenciaId || 0;
+    constructor(clienteID: number){
+        this.asistenciaId = 0;
         this.fechaCheckIn = new Date();
-        this.membresiaId = membresiaId;
+        this.clienteID = clienteID;
     }
 
     public getAsistenciaId(): number {
         return this.asistenciaId;
     }
 
-    public getMembresiaId(): number {
-        return this.membresiaId;
+    public getClienteID(): number {
+        return this.clienteID;
     }
 
     public getFechaCheckIn(): Date {

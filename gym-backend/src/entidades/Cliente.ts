@@ -1,17 +1,15 @@
 
-export class cliente {
+export class cliente{
     private readonly Id: number;
     private readonly nombreCompleto: string;
     private readonly telefono: number;
-    private idTipoMembresia: number;
     private notas: string;
     private readonly fechaRegistro: Date;
 
-    constructor(nombreCompleto: string, telefono: number, idTipoMembresia: number, notas?: string, Id?: number) {
+    constructor(nombreCompleto: string, telefono: number, notas?: string, Id?: number){
         this.Id = Id || -1;
         this.nombreCompleto = nombreCompleto;
         this.telefono = telefono;
-        this.idTipoMembresia = idTipoMembresia;
         this.notas = notas || '';
         this.fechaRegistro = new Date();
     }
@@ -19,8 +17,8 @@ export class cliente {
     public getId(): number {
         return this.Id;
     }
-
-    public getNombreCompleto(): string {
+    
+    public getNombreCompleto(): string {    
         return this.nombreCompleto;
     }
 
@@ -40,12 +38,5 @@ export class cliente {
         this.notas = notas;
     }
 
-    public getIdTipoMembresia(): number {
-        return this.idTipoMembresia;
-    }
-
-    public setIdTipoMembresia(idTipoMembresia: number): void {
-        this.idTipoMembresia = idTipoMembresia;
-    }
 
 }

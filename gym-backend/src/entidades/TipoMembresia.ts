@@ -1,22 +1,22 @@
 
-export class tipoMembresia {
-    private readonly tipoMembresiaId: number;
+export class tipoMembresia{
+    private readonly tipoMembresiaID: number;
     private nombre: string;
     private duracionDias: number;
     private precio: number;
 
-    constructor(nombre: string, duracionDias: number, precio: number, tipoMembresiaId?: number) {
-        this.tipoMembresiaId = tipoMembresiaId || 0;
+    constructor(nombre: string, duracionDias: number, precio: number){
+        this.tipoMembresiaID = 0;
         this.nombre = nombre;
         this.duracionDias = duracionDias;
         this.precio = precio;
     }
 
-    public getTipoMembresiaId(): number {
-        return this.tipoMembresiaId;
+    public getTipoMembresiaID(): number {
+        return this.tipoMembresiaID;
     }
 
-    public getNombre(): string {
+    public getNombre(): string {    
         return this.nombre;
     }
 
